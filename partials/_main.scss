@@ -1,0 +1,179 @@
+body{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: $white;
+    main{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        max-width: 1200px;
+        padding-block: 2em;
+        header{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            padding-block: 2em;
+            menu{
+                #icon-menu{
+                    display: none;
+                }
+                #menu{
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    justify-content: center;
+                    gap: 40px;
+                    
+                    li{
+                        list-style-type: none;
+    
+                        a{
+                            text-decoration: none;
+                            &:hover{
+                                color:$red;
+                            }
+                        }
+                    }
+                }
+                #menu-responsive{
+                    display: none;
+                    
+                }
+            }
+            
+        }
+        section{
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: 300px 160px 150px;
+            grid-template-areas: 
+            "img img article"
+            "title info article"
+            "uno dos tres"
+            ;
+            align-items: center;
+            gap: 25px;
+            
+            #image{
+                grid-area:img;
+                max-height: 100%;
+                width: 100%;
+            }
+            #title{
+                grid-area:title;
+                font-size: 50px;
+            }
+            .info{
+                grid-area:info;
+                display: flex;
+                flex-direction: column;
+                align-items: start;
+                justify-content: space-between;
+                height: 100%;
+                >button{
+                    padding:15px 35px;
+                    background-color: $red;
+                    letter-spacing: 2px;
+                    color: $white;
+                    font-size: 14px;
+                    
+                    text-transform: uppercase;
+                    border: transparent;
+                    cursor: pointer;
+                    &:hover{
+                        background-color: $veryDarkBlue;
+                    }
+                }
+            }
+            article{
+                grid-area:article;
+                background-color: $veryDarkBlue;
+                padding: 2em;
+                height: 100%;
+                .news{
+                    padding-top: 25px;
+                    &:nth-child(even){
+                        border-bottom: transparent;
+                    }
+                }
+                >h1{
+                    color: $orange;
+                    font-size: 40px;
+                    padding-bottom: 25px;
+                }
+                >div{
+                    border-bottom: 1px solid $grayishBlue;
+                    padding-bottom: 15px;
+                    
+                    >h1{
+                        color: $white;
+                        padding-bottom: 10px;
+                        &:hover{
+                            color: $orange;
+                            cursor: pointer;
+                        }
+                    }
+                    >p{
+                        color: $grayishBlue;
+                        padding-bottom: 25px;
+                    }
+                }
+            }
+            .box{
+                img{
+                    width: 100px;
+                   
+                    }
+                
+                >div{
+                    padding: 15px;
+                    
+                    >*{
+                        padding-block: 10px;
+                    }
+                    h1{
+                        color: $grayishBlue;
+                    }
+                    b{
+                        font-weight: 800;
+                        &:hover{
+                            color: $red;
+                            cursor: pointer;
+                        }
+                    }
+                    p{
+                        color: $darkGrayishBlue;
+                        font-size: 14px;
+                    }
+                }
+            }
+            .uno{
+                grid-area:uno;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: center;
+            }
+            .dos{
+                grid-area:dos;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: center;
+            }
+            .tres{
+                grid-area:tres;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: center;
+            }
+        }
+    }
+}
